@@ -35,3 +35,52 @@ h1 {
 .card:hover {
   transform: scale(1.05);
 }
+.hero, .card {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.orbit-box {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  margin: 40px auto;
+  border: 2px dashed rgba(255,255,255,0.4);
+  border-radius: 50%;
+}
+
+.earth {
+  position: absolute;
+  font-size: 60px;
+  top: 90px;
+  left: 95px;
+}
+
+.satellite {
+  position: absolute;
+  font-size: 30px;
+  top: 10px;
+  left: 105px;
+  animation: orbit 5s linear infinite;
+  transform-origin: 20px 115px;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
