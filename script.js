@@ -1,16 +1,14 @@
-const searchBar = document.getElementById("searchBar");
-const cards = document.querySelectorAll(".card");
+for(let i=0;i<100;i++){
+    let star = document.createElement("div");
+    star.className = "star";
 
-searchBar.addEventListener("keyup", function () {
-  let value = searchBar.value.toLowerCase();
+    star.style.width = "2px";
+    star.style.height = "2px";
+    star.style.background = "white";
+    star.style.position = "absolute";
 
-  cards.forEach(card => {
-    let text = card.innerText.toLowerCase();
+    star.style.top = Math.random()*2000 + "px";
+    star.style.left = Math.random()*100 + "%";
 
-    if (text.includes(value)) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-});
+    document.body.appendChild(star);
+}
